@@ -1,12 +1,12 @@
 import 'package:client/core/theme/app_pallete.dart';
+import 'package:client/extensions/extension.dart';
 import 'package:flutter/material.dart';
 
 class AuthGradientButton extends StatelessWidget {
   final String buttonName;
-  const AuthGradientButton({
-    super.key,
-    required this.buttonName,
-  });
+  final VoidCallback onTap;
+  const AuthGradientButton(
+      {super.key, required this.buttonName, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +40,8 @@ class AuthGradientButton extends StatelessWidget {
           ),
         ),
       ),
+    ).onTap(
+      onTap,
     );
   }
 }
